@@ -9,3 +9,22 @@ spec:
   ref:
     branch: main
   url: https://github.com/egormak/flux-infra
+
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: fluxcd-infra
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./clusters/egorka
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: fluxcd-infra
+  # postBuild:
+  #   substitute:
+  #     env: "homelab"
+  #     cluster_name: "docker-desktop"
+  #     cluster_subdomain: "localhost.direct"
