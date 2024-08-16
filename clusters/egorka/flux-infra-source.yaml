@@ -21,6 +21,8 @@ spec:
     provider: sops
     secretRef:
       name: sops-age
+  dependsOn:
+    - name: flux-infra-crd
   interval: 10m0s
   path: ./clusters/egorka
   prune: true
