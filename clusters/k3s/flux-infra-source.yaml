@@ -21,8 +21,8 @@ spec:
     provider: sops
     secretRef:
       name: sops-age
-  dependsOn:
-    - name: flux-infra-crd
+  # dependsOn:
+  #   - name: flux-infra-crd
   interval: 10m0s
   path: ./clusters/k3s
   prune: true
